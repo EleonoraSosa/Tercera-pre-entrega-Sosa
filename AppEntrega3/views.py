@@ -58,9 +58,9 @@ def busca_Informacion(req):
     
 
 def buscar(req):
-    if req.GET.get("nombre"):  # Obtener el nombre del campo de entrada
+    if req.GET.get("nombre"):  
         nombre = req.GET["nombre"]
-        registros = Registro.objects.filter(nombre__icontains=nombre)  # Filtrar registros que contienen el nombre
+        registros = Registro.objects.filter(nombre__icontains=nombre) 
 
         return render(req, "AppEntrega3/padre.html", {
             "registros": registros,
